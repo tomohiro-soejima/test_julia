@@ -1,3 +1,6 @@
+#Pkg.add("BenchmarkTools")
+using BenchmarkTools
+
 function f(x)
     x^2
 end
@@ -12,17 +15,15 @@ print("You can define a function using a short line form\n")
 
 f2(x) = x^2
 
-print("f2(3) is ",f2(3))
+print("f2(3) is ",f2(3),"\n")
 
 using Colors
 
 #display(distinguishable_colors(12))
 
-A = rand(300)
+@time A = rand(10000000)
 
-#Pkg.add("BenchmarkTools")
-using BenchmarkTools
+@time sum(A)
 
-julia_btime = @btime sum(A)
-
-display(julia_btime)
+#make sure to add $ sign to avoid using globals for benchmarking
+@btime sum($A)
