@@ -1,0 +1,5 @@
+using Interact
+
+@manipulate for n in 1:10
+    display(n)
+end
