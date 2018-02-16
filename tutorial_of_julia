@@ -7,3 +7,9 @@ print(f(2))
 A = [i+j for i in 1:10, j in 1:10]
 
 display(A)
+
+print("You can define a function using a short line form\n")
+
+f2(x) = x^2
+
+print("f2(3) is ",f2(3))
