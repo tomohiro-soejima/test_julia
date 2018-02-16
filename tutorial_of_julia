@@ -13,3 +13,7 @@ print("You can define a function using a short line form\n")
 f2(x) = x^2
 
 print("f2(3) is ",f2(3))
+
+using Colors
+
+display(distinguishable_colors(12))
